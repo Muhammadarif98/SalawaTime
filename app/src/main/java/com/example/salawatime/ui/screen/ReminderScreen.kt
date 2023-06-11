@@ -15,7 +15,7 @@ fun ReminderScreen() {
 
     Column(
         modifier = Modifier.fillMaxSize()
-            .background(Color.Green)
+            .background(Color.Gray)
     ) {
         Text(text = "Reminder Screen", fontSize = 50.sp)
     }

@@ -1,6 +1,7 @@
 package com.example.salawatime.ui.bottomnav
 
 
+import android.content.res.Resources.Theme
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -26,6 +27,8 @@ import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,6 +39,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.salawatime.ui.theme.Brown
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -65,27 +69,36 @@ fun BottomBar( navController: NavHostController) {
 
     )
 
+    val gr1 = Color(0xFFE5D9A3)
+    val gr2 = Color(0xFFF6EFCF)
+
+
     val navStackBackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navStackBackEntry?.destination
     Box(modifier = Modifier
-        .padding(start = 28.dp, end = 28.dp, top = 16.dp, bottom = 16.dp)){
+        .padding(start = 28.dp, end = 28.dp, top = 16.dp, bottom = 16.dp)
+        ){
         Box(modifier = Modifier
             .clip(RoundedCornerShape(80.dp, 80.dp, 80.dp, 80.dp))
-            .background(Color.Yellow),
+            .shadow(10.dp)
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        gr1,
+                        gr2,
+                    )
+                )
+            ),
 
 
     ){
         Row(
             modifier = Modifier
-
                 .padding(start = 0.dp, end = 0.dp, top = 0.dp, bottom = 0.dp)
                 .width(360.dp)
                 .height(60.dp)
-
-
             ,
-           horizontalArrangement = Arrangement.SpaceAround,
-
+            horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
             screens.forEach { screen ->
@@ -109,13 +122,19 @@ fun RowScope.AddItem(
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
+
+    val brownColor = Color(0xFF827868)
+    val greyColor = Color(0xFFFFFFFF)
+
+
+
     val selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true
 
     val background =
-        if (selected) MaterialTheme.colorScheme.primary.copy(alpha = 0.6f) else Color.Transparent
+        if (selected) brownColor else Color.Transparent
 
     val contentColor =
-        if (selected) Color.White else Color.Black
+        if (selected) greyColor else brownColor
 
     Box(
         modifier = Modifier

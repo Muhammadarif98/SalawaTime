@@ -14,7 +14,7 @@ fun HomeScreen() {
 
     Column(
         modifier = Modifier.fillMaxSize()
-            .background(Color.Blue)
+            .background(Color.Gray)
     ) {
         Text(text = "Home Screen", fontSize = 50.sp)
     }
