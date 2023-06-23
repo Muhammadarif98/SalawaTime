@@ -1,29 +1,17 @@
 package com.example.salawatime.ui.bottomnav
 
 
-import android.content.res.Resources.Theme
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-
-
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Badge
-import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Center
-import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
@@ -38,18 +26,28 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.salawatime.ui.theme.Brown
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BottomNav(modifier: Modifier) {
+fun BottomNav() {
     val navController = rememberNavController()
-
+    val gr1 = Color(0xFFE0D3C3)
+    val gr2 = Color(0xFFE4C8A6)
     Scaffold(
-        modifier = Modifier.padding(bottom = 20.dp),
+        modifier = Modifier
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        gr1,
+                        gr2,
+                    )
+                )
+            )
+            .padding(bottom = 20.dp),
         bottomBar = {
             BottomBar(navController = navController)
         }
+
     ) {
         Modifier
             .padding(it)
@@ -155,7 +153,9 @@ fun RowScope.AddItem(
             Icon(
                 painter = painterResource(id = if (selected) screen.icon_focused else screen.icon),
                 contentDescription = "icon",
-                tint = contentColor
+                tint = contentColor,
+                modifier = Modifier
+                    .size(36.dp)
             )
 
             /* AnimatedVisibility(visible = selected) {
@@ -171,5 +171,5 @@ fun RowScope.AddItem(
 @Composable
 @Preview
 fun BottomNavPreview() {
-    BottomNav(modifier = Modifier)
+    BottomNav()
 }

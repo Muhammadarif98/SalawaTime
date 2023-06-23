@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">SalawaTime</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="profile">prfile\n</string>
+    <string name="dashboard">dashboard</string>
+    <string name="scrollable">scrollable</string>
+    <string name="item">item</string>
+    <string name="navigate_to">nav</string>
+    <string name="go_to_previous">back</string>
+    <string name="home">home</string>
 </resources>

@@ -1,6 +1,6 @@
-package com.example.salawatime.ui.screen
+package com.example.salawatime.ui.screen.reminder
 
-import android.provider.CalendarContract.Reminders
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
