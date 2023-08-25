@@ -10,4 +10,8 @@
     <string name="navigate_to">nav</string>
     <string name="go_to_previous">back</string>
     <string name="home">home</string>
+    <string name="search_title">Поиск по названию...</string>
+    <string name="title_activity_add_task">AddTaskActivity</string>
+    <string name="no_records">Нет список дел</string>
+    <string name="title_activity_todo">TodoActivity</string>
 </resources>
