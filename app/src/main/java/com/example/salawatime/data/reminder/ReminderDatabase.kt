@@ -1,5 +1,7 @@
 package com.example.salawatime.data.reminder
 
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.lifecycle.MutableLiveData
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -13,7 +15,7 @@ data class ReminderDatabase (
     @ColumnInfo(name = "isSwitchOn") var isSwitchOn: Boolean
     )
 
-val reminderDataList = listOf(
+    val reminderDataList = listOf(
     ReminderDatabase(
         id = 1,
         title = "Салават",

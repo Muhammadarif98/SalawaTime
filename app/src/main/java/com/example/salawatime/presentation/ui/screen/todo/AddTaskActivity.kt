@@ -103,7 +103,7 @@ fun Greeting2(viewModel : AddTaskViewModel) {
         // Button Save Task
         Button(
             onClick = {
-                if (title.isEmpty()) Toast.makeText(activity?.baseContext , "Title is empty" , Toast.LENGTH_SHORT).show()
+                if (title.isEmpty()) Toast.makeText(activity?.baseContext , "Заглавие пусто" , Toast.LENGTH_SHORT).show()
                 else {
                     val task = Task(null , title , description , false)
                     viewModel.addTask(task)

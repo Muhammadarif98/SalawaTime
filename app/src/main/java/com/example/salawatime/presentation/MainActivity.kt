@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
@@ -53,5 +55,12 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+@Composable
+@Preview
+fun prewiew(){
+    SalawaTimeTheme() {
+        MainActivity()
     }
 }

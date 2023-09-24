@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 @Dao
 interface reminderDaoApp {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun getReminder(reminderDatabase: ReminderDatabase)
 
     @Update
