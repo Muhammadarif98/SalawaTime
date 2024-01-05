@@ -8,18 +8,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.salawatime.presentation.ui.bottomnav.BottomNav
-import com.example.salawatime.presentation.ui.screen.reminder.ReminderViewModel
-import com.example.salawatime.presentation.ui.screen.todo.MainViewModel
+import com.example.salawatime.presentation.ui.screen.todo.ViewModel.MainViewModel
 import com.example.salawatime.presentation.ui.theme.SalawaTimeTheme
+import com.example.salawatime.presentation.worker.MyViewModelFactory
+import com.example.salawatime.presentation.worker.WorkViewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,19 +47,16 @@ class MainActivity : ComponentActivity() {
                         .padding(bottom = 16.dp),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    val workViewModel = ViewModelProvider(this, MyViewModelFactory(this.application)).get(
+                        WorkViewModel::class.java)
                     val viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-                    val reminderViewModel = ViewModelProvider(this)[ReminderViewModel::class.java]
-                    BottomNav(viewModel,reminderViewModel)
+                   // val reminderViewModel = ViewModelProvider(this)[ReminderViewModel::class.java]
+                    BottomNav(viewModel,workViewModel)
                     // ReminderScreen(reminderViewModel = reminderViewModel)
                 }
             }
         }
     }
-}
-@Composable
-@Preview
-fun prewiew(){
-    SalawaTimeTheme() {
-        MainActivity()
-    }
+
+
 }

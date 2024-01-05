@@ -1,1 +1,1 @@
-package com.example.salawatime.presentationconst val HIGH = "High"const val MEDIUM = "Medium"const val LOW = "Low"
+package com.example.salawatime.presentationconst val PREFS_NAME = "com.example.app.PREFS"

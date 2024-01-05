@@ -14,4 +14,13 @@
     <string name="title_activity_add_task">AddTaskActivity</string>
     <string name="no_records">Нет список дел</string>
     <string name="title_activity_todo">TodoActivity</string>
+    <string name="close">Выйти</string>
+    <string name="alertTitle">Внимание</string>
+    <string name="text_args">Вы действительно хотите выйти?\nТаймер сбросится!</string>
+    <string name="cancel">Отмена</string>
+    <string name="info">Это диалоговое окно с информацией. Здесь может быть любой текст, который вы хотите показать пользователю,Здесь может быть любой текст, который вы хотите показать пользователю,Здесь может быть любой текст, который вы хотите показать пользователю,Здесь может быть любой текст, который вы хотите показать пользователю</string>
+    <string name="infoTimer">Если переключить экран\nТаймер сбросится!</string>
+    <string name="star">star</string>
+    <string name="add">add</string>
+    <string name="delete">delete</string>
 </resources>

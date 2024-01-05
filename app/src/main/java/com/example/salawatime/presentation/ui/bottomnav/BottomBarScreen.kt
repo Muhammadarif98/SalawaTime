@@ -2,16 +2,12 @@ package com.example.salawatime.presentation.ui.bottomnav
 
 import com.example.salawatime.R
 
-
 sealed class BottomBarScreen(
     val route: String,
     val title: String,
     val icon: Int,
     val icon_focused: Int
 ) {
-
-
-
     // for reminder
     object Reminder: BottomBarScreen(
         route = "report",
@@ -26,7 +22,7 @@ sealed class BottomBarScreen(
         icon = R.drawable.ic_bottom_home,
         icon_focused = R.drawable.ic_bottom_home_focused
     )
-    // for ToDo
+    // for todo
     object ToDo: BottomBarScreen(
         route = "profile",
         title = "",

@@ -17,20 +17,42 @@ val provider = GoogleFont.Provider(
 )
 
 val fontName = GoogleFont("Lora")
-
+val fontLucky = GoogleFont("Luckiest Guy")
 val fontFamily = FontFamily(
     Font(
         googleFont = fontName,
         fontProvider = provider,
         weight = FontWeight.Bold,
-        style = FontStyle.Italic
+      //  style = FontStyle.Italic
+    )
+)
+val luckFamily = FontFamily(
+    Font(
+        googleFont = fontLucky,
+        fontProvider = provider,
+        weight = FontWeight.Bold,
+      //  style = FontStyle.Italic
     )
 )
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = fontFamily,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.ExtraLight,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
+    titleLarge = TextStyle(
+        fontFamily = luckFamily,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
